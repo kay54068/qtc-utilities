@@ -20,3 +20,7 @@ Adds pane with continuous integration status. Shows repository and build informa
 Currently supports [drone.io](https://drone.io/).
 
 ![Preview](util/ci.png?raw=true)
+
+
+
+TEST
