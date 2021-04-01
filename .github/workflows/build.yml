@@ -24,7 +24,7 @@ jobs:
         run: echo "${{ steps.create_release.outputs.upload_url }}" > ./release_upload_url
 
       - name: Upload release url
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           path: ./release_upload_url
           name: release_upload_url
@@ -48,7 +48,7 @@ jobs:
           fetch-depth: 10
 
       - name: Setup python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: "3.x"
 
@@ -79,7 +79,7 @@ jobs:
           echo ::set-env name=artifact::`python ./util/ci/build.py artifact_name`
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: ${{ env.artifact }}
           path: ./${{ env.artifact }}
