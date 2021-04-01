@@ -6,7 +6,7 @@ jobs:
   release:
     name: Create release
     if: contains(github.ref, '/tags/')
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Create release
         if: contains(github.ref, '/tags/')
@@ -40,7 +40,7 @@ jobs:
         config:
           - { name: "win64", os: windows-latest }
           - { name: "win32", os: windows-latest }
-          - { name: "linux", os: ubuntu-16.04 }
+          - { name: "linux", os: ubuntu-latest }
           - { name: "macos", os: macos-latest }
     steps:
       - uses: actions/checkout@v2
