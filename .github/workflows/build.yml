@@ -76,9 +76,9 @@ jobs:
         shell: bash
         run: |
 
-          echo "artifact=${python ./util/ci/build.py artifact_name}" >> $GITHUB_ENV
-          echo "upload_url=${cat ./release_upload_url}" >> $GITHUB_ENV
-          
+          echo "upload_url=`cat ./release_upload_url || true`" >> $GITHUB_ENV
+          echo "artifact=`python ./util/ci/build.py artifact_name`" >> $GITHUB_ENV
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
         with:
